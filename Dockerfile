@@ -35,13 +35,12 @@ RUN set -eux \
         protobuf-c-dev \
         libcurl \
     \
-# build Pg_http
-    \
     && cd /usr/src/http \
     && make \
     && make install \
     \
-# clean
     && cd / \
     && rm -rf /usr/src/http \
-    && apk del .fetch-deps .build-deps
+    && apk del .fetch-deps .build-deps \
+    \
+    && apk add libcurl
