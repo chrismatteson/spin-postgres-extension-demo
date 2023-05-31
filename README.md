@@ -8,9 +8,11 @@ See the README in the repo linked above for general usage.
 ## Examples with Spin:
 
 Fetch content from app:
+
     SELECT content FROM http_get('https://abc.fermyon.app');
 
 Post content to an app and recieve a response:
-SELECT content FROM http_post('https://calculator.fermyon.app/api','5*11','text/plain');
+
+    SELECT content FROM http_post('https://calculator.fermyon.app/api','5*11','text/plain');
          
 
