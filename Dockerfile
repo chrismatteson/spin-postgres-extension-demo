@@ -1,4 +1,4 @@
-FROM postgres:15.3-alpine
+FROM postgres:alpine3.13
 
 RUN set -eux \
     && apk add --no-cache --virtual .fetch-deps \
@@ -6,7 +6,7 @@ RUN set -eux \
         openssl-dev \
         tar \
     \
-    && wget -O http.tar.gz "https://github.com/chrismatteson/pgsql-http/archive/refs/tags/1.5.0.tar.gz" \
+    && wget -O http.tar.gz "https://github.com/pramsey/pgsql-http/archive/refs/tags/v1.5.0.tar.gz" \
     && mkdir -p /usr/src/http \
     && tar \
         --extract \
@@ -19,7 +19,7 @@ RUN set -eux \
         \
         autoconf \
         automake \
-        clang15-dev \
+        clang-dev \
         file \
         g++ \
         gcc \
@@ -27,7 +27,7 @@ RUN set -eux \
         json-c-dev \
         libtool \
         libxml2-dev \
-        llvm15-dev \
+        llvm-dev \
         make \
         pcre-dev \
         perl \
